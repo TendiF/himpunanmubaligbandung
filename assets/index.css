@@ -23,9 +23,12 @@ body{
 .header-menu {
     display: flex;
 }
-.header-menu > p{
+.header-menu > a{
     margin:0px 16px;
     font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(58, 58, 58, 0.9);
 }
 
 .content {
@@ -102,6 +105,18 @@ body{
     background-size: cover;
 }
 
+.content-donasi {
+    background: url('./img/img-4.jpg'); 
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.content-tentang {
+    background: url('./img/img-5.jpg'); 
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
 .content-2 > div {
     width: 95%;
 }
@@ -153,6 +168,23 @@ body{
 }
 
 @media only screen and (max-width: 800px) {
+    .copyright {
+        text-align: center;
+    }
+    .header-menu a{
+        flex-shrink: 0;
+    }
+    .header-menu{
+        margin-bottom: 20px;
+        overflow: auto;
+        max-width: 100%;
+    }
+    .header > p:nth-child(1) {
+        text-align: center;
+    }
+    .header, .footer{
+        flex-direction: column;
+    }
     .content-2 > div > div {
         display: block;
     }
@@ -162,8 +194,8 @@ body{
     .content-2 > div > div > div {
         margin: 25px 5px;
     }
-    .content-1 > div {
-        width: 80%;
+    .content-1 > div, .content-donasi > div, .content-tentang > div {
+        width: 85%;
     }
     .murabi{
         margin: 0;
