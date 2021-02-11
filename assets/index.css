@@ -45,7 +45,7 @@ body{
 
 .content {
     min-height: 600px;
-    background: url('./img/img-1.jpg'); 
+    background: url('./img/img-6.jpg'); 
     background-position: 50% 50%;
     background-size: cover;
 }
@@ -79,10 +79,6 @@ body{
     color: white;
 }
 
-.content-1 > div > p:nth-child(1){
-    font-weight: bold;
-    font-size: 30px;
-}
 
 .content-1-button {
     display: flex;
@@ -157,8 +153,8 @@ body{
 }
 .murabis {
     display: flex;
-    overflow: auto;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .murabi {
@@ -178,8 +174,14 @@ body{
 .content-3 > div {
     width: 90%;
 }
+.program-unggulan > div {
+    width: 400px;
+}
 
 @media only screen and (max-width: 800px) {
+    .program-unggulan > div {
+        width: 90vw;
+    }
     .header > a > p {
         font-size: 1.3rem;
         width: 195px;
