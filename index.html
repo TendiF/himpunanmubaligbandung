@@ -8,6 +8,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <link href="/assets/splide.min.css" rel="stylesheet">
+    <script src="/assets/splide.min.js"></script>
+
     <meta name="description" content='Ayo beramal dengan cara dukung gerakan Himpunan Mubaligh Bandung' data-qmeta="description">
     <meta name="keywords" content="Surveyor, Broker" data-qmeta="keywords">
     <meta property="og:type" content="website" data-qmeta="propertyType">
@@ -64,6 +67,52 @@
                     <button>Tentang</button>
                 </a>
             </div> -->
+        </div>
+    </div>
+    <div  class="content content-1">
+        <div class="content-splide">
+            <div class="splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/1.jpeg');" class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/2.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/3.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/4.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/5.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/6.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/7.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                        <div  class="splide__slide">
+                            <div style="background: url('./assets/img/slider/8.jpeg'); " class="splide-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="splide__progress">
+                        <div class="splide__progress__bar">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="content content-2">
@@ -144,6 +193,11 @@
     </div>
 </body>
 <script>
+	new Splide( '.splide', {
+        type        : 'loop',
+        autoplay    : true,
+        pauseOnHover: false,
+        } ).mount();
     AOS.init();
     let i = 0
     setInterval(() => {

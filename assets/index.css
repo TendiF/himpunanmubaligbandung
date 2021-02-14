@@ -233,8 +233,26 @@ body{
     font-weight: bold ;
     color: gray;
 }
+.content-splide {
+    width: 70vw !important; 
+    opacity: 0.85; 
+}
+
+.content-splide > .desc {
+    width: 25vw;
+}
+
+.splide-img {
+    height: 500px; 
+    width: 100vw; 
+    background-size:cover !important;
+    background-position: center !important;
+}
 
 @media only screen and (max-width: 800px) {
+    .content-splide {
+        width: 98vw !important;  
+    }
     .program-unggulan > div {
         width: 90vw;
     }
