@@ -34,7 +34,7 @@
     <meta property="og:site_name" content="Himpunan Mubaligh Bandung">
 </head>
 <body>
-    <div data-aos="zoom-out" class="header">
+    <div class="header">
         <a href="/">
             <img style="margin:10px; width: 50px;" src="assets/img/logo-icon.svg" alt="">
             <p>Himpunan Mubaligh Bandung</p>
@@ -51,8 +51,8 @@
             </a>
         </div>
     </div>
-    <div data-aos="zoom-out" class="content content-1">
-        <div>
+    <div  class="content content-1">
+        <div data-aos="zoom-out">
             <p>HMB adalah Himpunan Mubaligh Bandung sebagai media dakwah di bawah bimbingan MUI Kecamatan Bojongsoang, untuk membantu masyarakat dalam bidang keagamaan dan sosial kemasyarakatan. <p/>
             <p>Kami adalah lembaga non profit yang berorientasi untuk berbagi dalam hal kebaikan sesuai tuntunan Ilahi dan juga sesuai dengan yang diajarkan oleh Rosululloh SAW.</p> 
             <p> Dengan latar belakang tersebutlah kami mengitikadkan lillahi semampu kami lahaula wala quwwata illa billah untuk terus berbagi hingga akhir hayat kami.</p>
@@ -66,8 +66,8 @@
             </div> -->
         </div>
     </div>
-    <div data-aos="zoom-out" class="content content-2">
-        <div>
+    <div class="content content-2">
+        <div data-aos="zoom-out">
             <h1>Program Kerja</h1>
             <div class="program-unggulan">
                 <div>
@@ -99,24 +99,24 @@
             </div>
         </div>
     </div>
-    <div data-aos="zoom-out" class="content content-3">
-        <div>
+    <div class="content content-3">
+        <div data-aos="zoom-out">
             <h1>Konsultasi</h1>
             <div class="murabis">
-                <div class="murabi">
-                    <img src="assets/img/epul.jpeg" alt="">
+                <div onclick="ShowModalMurabi('epul')" class="murabi">
+                    <img loading="lazy" src="assets/img/epul.jpeg" alt="">
                     <p>Ust. Saepuloh</p>
                 </div>
-                <div class="murabi">
-                    <img src="assets/img/teguh.jpeg" alt="">
+                <div onclick="ShowModalMurabi('teguh')" class="murabi">
+                    <img loading="lazy" src="assets/img/teguh.jpeg" alt="">
                     <p>Ust. Teguh</p>
                 </div>
-                <div class="murabi">
-                    <img src="assets/img/yasin.jpeg" alt="">
+                <div onclick="ShowModalMurabi('yasin')" class="murabi">
+                    <img loading="lazy" src="assets/img/yasin.jpeg" alt="">
                     <p>Ust. Yasin</p>
                 </div>
-                <div class="murabi">
-                    <img src="assets/img/euis.jpeg" alt="">
+                <div onclick="ShowModalMurabi('euis')" class="murabi">
+                    <img loading="lazy" src="assets/img/euis.jpeg" alt="">
                     <p>Ustz. Euis</p>
                 </div>
             </div>
@@ -139,8 +139,97 @@
             <p>© 2020</p>
         </div>
     </div>
+    <div class="murabi-detail">
+        
+    </div>
 </body>
 <script>
     AOS.init();
+    let i = 0
+    setInterval(() => {
+        for (const iterator of document.getElementsByClassName("murabi scale")) {
+            iterator.classList.remove("scale")
+        }
+        document.getElementsByClassName("murabi")[i]
+        document.getElementsByClassName("murabi")[i].className += " scale"
+        if(i >= 3) {
+            i = 0
+        }else {
+            i++
+        }
+    },2000)
+    let murabis = {
+        epul : {
+            profile : "assets/img/epul.jpeg",
+            name : "Ust. Epul",
+            bio : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            location : "Bandung, Indonesia",
+            link: {
+                wa : "6289663302248",
+                fb : "hmb.berkah",
+            }
+        },
+        teguh : {
+            profile : "assets/img/teguh.jpeg",
+            name : "Ust. Teguh",
+            bio : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            location : "Bandung, Indonesia",
+            link: {
+                wa : "6289663302248",
+                fb : "hmb.berkah",
+            }
+        },
+        yasin : {
+            profile : "assets/img/yasin.jpeg",
+            name : "Ust. Yasin",
+            bio : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            location : "Bandung, Indonesia",
+            link: {
+                wa : "6289663302248",
+                fb : "hmb.berkah",
+            }
+        },
+        euis : {
+            profile : "assets/img/euis.jpeg",
+            name : "Ustz. euis",
+            bio : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            location : "Bandung, Indonesia",
+            link: {
+                wa : "6289663302248",
+                fb : "hmb.berkah",
+            }
+        },
+    }
+    function HideModalMurabi(){
+        document.getElementsByClassName("murabi-detail")[0].setAttribute("style", "display:none;")
+    }
+    function ShowModalMurabi(data){
+        let murabi = murabis[data]
+        let content = `<div>
+            <span onclick="HideModalMurabi()" style="position:absolute;left:0;color:gray;margin:5px;font-size:20px;font-weight:bold;">X</span>
+            <img loading="lazy" src="${murabi.profile}" alt="">
+            <p>${murabi.name}</p>
+        </div>
+        <div class="murabi-detail-section">
+            <div class="detail-section">
+                <p>Bio</p>
+                <p>${murabi.bio}</p>
+            </div>
+            <div class="detail-section">
+                <p>Location</p>
+                <p>${murabi.location}</p>
+            </div>
+            <div style="border-bottom: none; margin-top: 15px;" class="detail-section">
+                <a target="_blank" href="https://wa.me/${murabi.link.wa}?text=Assalamualaikum%20saya%20ingin%20berkonsultasi" style="text-decoration: none;">
+                    <img style="width:35px;" src="../assets/img/ic_wa.png" alt="">
+                  </a>
+                  <a target="_blank" href="https://www.facebook.com/${murabi.link.fb}" style="text-decoration: none;">
+                      <img style="width:35px;" src="../assets/img/ic_fb.png" alt="">
+                  </a>
+            </div>
+        </div>`;
+        document.getElementsByClassName("murabi-detail")[0].innerHTML = content
+        document.getElementsByClassName("murabi-detail")[0].setAttribute("style", "display:block;")
+    }
 </script>
 </html>
